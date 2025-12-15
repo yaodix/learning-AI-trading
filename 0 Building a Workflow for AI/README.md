@@ -37,3 +37,5 @@
 ### Goal
 
 * Equip learners with the necessary tools and knowledge for advancing in AI-driven trading.
+
+### pct_change

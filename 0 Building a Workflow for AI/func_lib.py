@@ -75,7 +75,7 @@ def compute_returns(historical_prices, list_of_momentums):
     return total_returns
 
 
-def compute_BM_Perf(total_returns):
+def compute_BM_Perf(total_returns):  # benchmark performance
     # Compute the daily mean of all stocks. This will be our equal weighted benchmark
     daily_mean  = pd.DataFrame(total_returns.loc[:,'F_1_d_returns'].groupby(level='Date').mean())
     daily_mean.rename(columns={'F_1_d_returns':'SP&500'}, inplace=True)
@@ -277,3 +277,8 @@ def plot_optimal_cluster_point(sse, k_range):
     
     plt.tight_layout()
     plt.show()
+    
+    
+    
+if __name__ == '__main__':
+    hist_data = create_hist_prices(start_date='2020-01-01')

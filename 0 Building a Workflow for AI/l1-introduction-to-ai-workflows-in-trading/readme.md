@@ -17,3 +17,16 @@ Changes in financial reporting and the relationship between cash flows and earni
   * Avoid overfitting by using enough relevant data without introducing outdated patterns.
 
 By carefully selecting historical datasets, it's possible to craft robust models, reflect current market realities, and provide reliable AI-driven insights for trading strategies.
+
+
+
+#### 简单**与对数收益率** **（Log Return）**
+
+* ![1765781220906](image/readme/1765781220906.png)
+* 量化中**简单收益率更常用**于组合计算， **对数收益率更适用于建模** **（可加性）**
+
+### 在策略中的用途
+
+* **因子计算** ：动量因子 = 过去 N 日 `pct_change` 之和
+* **标签生成** **：**`forward_returns = close.pct_change().shift(-1)`
+* **风险指标** **：波动率 = 收益率的标准差**
