@@ -281,4 +281,6 @@ def plot_optimal_cluster_point(sse, k_range):
     
     
 if __name__ == '__main__':
-    hist_data = create_hist_prices(start_date='2020-01-01')
+    hist_data = create_hist_prices()
+    # save the historical prices to a csv file
+    hist_data.to_csv('historical_prices.csv')
