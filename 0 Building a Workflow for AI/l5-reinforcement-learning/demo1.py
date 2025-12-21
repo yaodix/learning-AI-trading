@@ -1,15 +1,10 @@
 import sys
 import os
-
-func_lib_path = os.path.abspath(os.path.join(os.getcwd(), '..'))
-# Add the path to sys.path
-sys.path.append(func_lib_path)
-# Now you can import func_lib
-import func_lib
   
 import gymnasium as gym
 from stable_baselines3 import DQN
 import time
+import pygame
 
 # Step 1: 创建环境，设置渲染模式为 'human'（可视化）
 env = gym.make('CartPole-v1', render_mode='human')
@@ -18,7 +13,9 @@ env = gym.make('CartPole-v1', render_mode='human')
 agent = DQN('MlpPolicy', env, verbose=0)
 
 # Step 3: 训练智能体 —— 学习 10,000 步
-agent.learn(total_timesteps=10000)
+agent.learn(total_timesteps=1000)
+
+print("Training completed.")
 
 # Step 4: 测试训练好的智能体
 obs, _ = env.reset()
