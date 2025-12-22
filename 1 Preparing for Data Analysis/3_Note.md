@@ -4,8 +4,19 @@
 
 Feature engineering transforms existing data to uncover underlying patterns and improve model performance.
 
-![1766326364449](image/3_Note/1766326364449.png)
 
+### Techniques:
+
+* **Moving Averages** : Smooths noisy data over a specified period.
+* **Outlier Handling** : Identifies and mitigates the effect of anomalies.
+* **Log Transformations** : Linearizes exponential trends.
+* **Smoothing and Differencing** : Used to achieve stationarity in time series data.
+
+### Tips:
+
+* Focus on techniques that align with your model's requirements and domain insights.
+* Prioritize commonly used methods relevant to your model's application.
+* Practical applications in trading can include creating rolling averages, volatility measures, and momentum indicators.![1766326364449](image/3_Note/1766326364449.png)
 
 ### Guide to Feature Engineering in Financial Data
 
@@ -29,6 +40,8 @@ Explore essential techniques used in feature engineering for financial data, cru
 
 Log transformations
 
+作用：
+
 * skewness-改变偏斜
 * 对异常数据鲁棒
 
@@ -38,11 +51,7 @@ Log transformations
 
 ![1766328117259](image/3_Note/1766328117259.png)
 
-
-
 ![1766328346156](image/3_Note/1766328346156.png)
-
-
 
 移动平均，动量指标之一
 
@@ -56,11 +65,9 @@ RSI可以获取动量和趋势强弱
 
 ![1766328780130](image/3_Note/1766328780130.png)
 
-
-
 ### 数据简化中两个核心的技术
 
-： **分组（Binning）**  和  **特征工程（Feature Engineering）** ，特别是在金融交易信号场景下的应用。
+**分组（Binning）**  和  **特征工程（Feature Engineering）** ，特别是在金融交易信号场景下的应用。
 
 以下是对其核心内容的提炼与解读：
 
@@ -78,10 +85,9 @@ RSI可以获取动量和趋势强弱
 
  **典型方法** ：利用技术指标（如移动平均线、趋势线）的交叉或阈值来定义信号。
 
-
 ### Essential Tips for Feature Engineering in Time Series
 
-Feature engineering in time series involves creativity but requires caution to avoid common mistakes. Here are some critical considerations to keep in mind:
+Feature engineering in time series involves creativity but requires **caution to avoid common mistakes**. Here are some critical considerations to keep in mind:
 
 * **Avoid Future Data** :
   * Never use data from the future when engineering features.
@@ -96,7 +102,36 @@ Feature engineering in time series involves creativity but requires caution to a
 * **Ordinality in Categorical Data** :
   * Understand if categories impose order; apply numerical values properly.
   * Avoid assuming order in inherently unordered categories, like months.
-  * 避免假设序数性，比如6月不是1月的6倍
+    * 避免假设序数性，比如6月不是1月的6倍
 * **如何验证Validation Technique** :
   * Double-check engineered features by removing recent data and attempting feature recreation.
+    * 去掉最近3个月的数据，看指标计算是否受影响
   * Ensure feature creation is independent of future data.
+
+### Feature Selection Methods For Trading Models
+
+特征选择解决的问题：which feature  are actually useful!
+
+* **Techniques for Feature Selection:**
+
+  1. **Correlation Matrix & Heat Map:**
+
+  * Calculates correlations between features to find redundant ones.
+  * Visual representation in heat maps helps pinpoint relationships.
+
+  1. **Recursive Feature Elimination (RFE):**
+
+  * Forward RFE: Starts with no features, adding them one by one, evaluating performance.
+  * Backward RFE: Begins with all features, removing them iteratively while assessing impact.
+
+  1. **Principal Component Analysis (PCA):**
+
+  * Transforms data to a simpler form, retaining most variance with fewer features.
+
+  1. **Metric-based Assessment:**
+
+  * Models like Random Forest assign importance scores to features.
+
+  1. **Regularization:**
+
+  * Methods like L1/L2 shrink coefficients, reduce model complexity, and select key features effectively.

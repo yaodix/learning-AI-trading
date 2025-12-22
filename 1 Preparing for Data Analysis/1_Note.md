@@ -25,7 +25,7 @@ What?
 
 * create **new attributes** columns using exsiting columns
 
-Model Development
+#### Model Development
 
 * supervised leanring
 * unsupervised learning
@@ -46,34 +46,8 @@ Baseline Model
 
 * **Benefits of API:** By wrapping the model's prediction code into a Python script and function, the deployment becomes clean and straightforward, enriching usability and monitoring.
 
-
 ## Addressing Common Pandas Data Issues
 
 ### Key Concepts:
 
 * **Data Importation Challenges** : Sometimes when importing datasets into Pandas, numeric data might be read as strings because of characters like dollar signs or commas.
-
-### Problem Areas:
-
-* **Non-Numeric Characters** :
-* **Price Column** : Contains unwanted dollar signs.
-* **Revenue Column** : Uses commas for the thousand separators.
-* **Quantity Column** : May have strings where numbers are expected.
-
-### Solutions:
-
-1. **Recognizing Data Types** :
-
-* Use `.info()` to identify data types and check if columns are mistakenly read as objects (strings).
-
-1. **Cleaning Up Data** :
-
-* **Replacing Characters** :
-  * Remove dollar signs using the `.replace()` method with regex enabled.
-  * Remove commas similarly.
-* **Converting to Numeric** :
-  * Use `.astype(float)` to convert cleaned data to numeric values.
-
-1. **Dealing with Errors** :
-
-* Use `pd.to_numeric()` with `errors='coerce'` for converting strings to NaN where they can't be made numeric initially.
