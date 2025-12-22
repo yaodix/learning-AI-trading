@@ -4,7 +4,6 @@
 
 Feature engineering transforms existing data to uncover underlying patterns and improve model performance.
 
-
 ### Techniques:
 
 * **Moving Averages** : Smooths noisy data over a specified period.
@@ -135,3 +134,24 @@ Feature engineering in time series involves creativity but requires **caution to
   1. **Regularization:**
 
   * Methods like L1/L2 shrink coefficients, reduce model complexity, and select key features effectively.
+
+
+## Understanding Feature Engineering in Trading Models
+
+Feature engineering transforms raw data into meaningful inputs, enhancing the effectiveness of trading models. It's an essential step in predicting price movements with greater accuracy and reliability.
+
+### Key Techniques:
+
+* **Moving Averages** : Assessing trends by smoothing data over specified time periods.
+* **Relative Strength Index (RSI)** : Evaluates market conditions by comparing recent gains and losses.
+* **Trading Volume** : Analyzes the number of shares traded to provide insights into market activity.
+* **Volatility** : Measures the rate of price fluctuations to assess risk and market behavior.
+* **Lagged Returns** : Uses past return data to predict future performance.
+
+### Important Considerations:
+
+* **Data Selection** : Involves choosing historical price data, volumes, and relevant technical indicators.
+* **Data Cleaning** : Removing outliers and addressing missing values for accurate analysis.
+* **Feature Simplification** : Utilizing visualization tools to identify and eliminate highly correlated features.
+* **Advanced Techniques** : Methods like recursive feature elimination and principal components analysis for refining features.
+* **Model Reliability** : Cross-validation for model generalization and regularization techniques like lasso and ridge to prevent overfitting.
