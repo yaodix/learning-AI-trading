@@ -16,14 +16,19 @@ end_date = '2024-09-01'
 # data = yf.download(ticker, start=start_date, end=end_date)
 # data.to_csv('1 Preparing for Data Analysis/data/apple_historical_data_20-24.csv')
 # data = pd.read_csv('1 Preparing for Data Analysis/data/apple_historical_data_20-24.csv')
-def load_csv(file_path):
+def load_csv_25format(file_path):
   data = pd.read_csv(file_path)
   # 删除第2,3行
   data = data.drop(index=[0,1])
   data.rename(columns={'Price': 'Date'}, inplace=True)
   data['Date'] = pd.to_datetime(data['Date'])
   data.set_index('Date', inplace=True)
-  print(data)
+  data['Close'] = data['Close'].astype(float)
+  data['High'] = data['High'].astype(float)
+  data['Low'] = data['Low'].astype(float)
+  data['Open'] = data['Open'].astype(float)
+  data['Volume'] = data['Volume'].astype(float)
+
   return data
 
 
@@ -107,4 +112,4 @@ def add_features(data):
   data.to_csv("AAPL_trading_features.csv")
 
 if __name__ == '__main__':
-    load_csv('1 Preparing for Data Analysis/data/apple_historical_data_20-24.csv')
+    load_csv_25format('1 Preparing for Data Analysis/data/apple_historical_data_20-24.csv')
